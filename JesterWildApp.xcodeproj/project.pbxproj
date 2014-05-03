@@ -1,0 +1,486 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D5CF3E8C19152A4E000D7EA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8B19152A4E000D7EA0 /* Foundation.framework */; };
+		D5CF3E8E19152A4E000D7EA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8D19152A4E000D7EA0 /* CoreGraphics.framework */; };
+		D5CF3E9019152A4E000D7EA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8F19152A4E000D7EA0 /* UIKit.framework */; };
+		D5CF3E9619152A4E000D7EA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5CF3E9419152A4E000D7EA0 /* InfoPlist.strings */; };
+		D5CF3E9819152A4E000D7EA0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CF3E9719152A4E000D7EA0 /* main.m */; };
+		D5CF3E9C19152A4E000D7EA0 /* JWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CF3E9B19152A4E000D7EA0 /* JWAppDelegate.m */; };
+		D5CF3E9F19152A4E000D7EA0 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CF3E9D19152A4E000D7EA0 /* Main_iPhone.storyboard */; };
+		D5CF3EA219152A4E000D7EA0 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CF3EA019152A4E000D7EA0 /* Main_iPad.storyboard */; };
+		D5CF3EA519152A4E000D7EA0 /* JWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CF3EA419152A4E000D7EA0 /* JWViewController.m */; };
+		D5CF3EA719152A4E000D7EA0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5CF3EA619152A4E000D7EA0 /* Images.xcassets */; };
+		D5CF3EAE19152A4E000D7EA0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3EAD19152A4E000D7EA0 /* XCTest.framework */; };
+		D5CF3EAF19152A4E000D7EA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8B19152A4E000D7EA0 /* Foundation.framework */; };
+		D5CF3EB019152A4E000D7EA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8F19152A4E000D7EA0 /* UIKit.framework */; };
+		D5CF3EB819152A4E000D7EA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5CF3EB619152A4E000D7EA0 /* InfoPlist.strings */; };
+		D5CF3EBA19152A4E000D7EA0 /* JesterWildAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CF3EB919152A4E000D7EA0 /* JesterWildAppTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D5CF3EB119152A4E000D7EA0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5CF3E8019152A4D000D7EA0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D5CF3E8719152A4E000D7EA0;
+			remoteInfo = JesterWildApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D5CF3E8819152A4E000D7EA0 /* JesterWildApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JesterWildApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5CF3E8B19152A4E000D7EA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D5CF3E8D19152A4E000D7EA0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D5CF3E8F19152A4E000D7EA0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D5CF3E9319152A4E000D7EA0 /* JesterWildApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JesterWildApp-Info.plist"; sourceTree = "<group>"; };
+		D5CF3E9519152A4E000D7EA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5CF3E9719152A4E000D7EA0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D5CF3E9919152A4E000D7EA0 /* JesterWildApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JesterWildApp-Prefix.pch"; sourceTree = "<group>"; };
+		D5CF3E9A19152A4E000D7EA0 /* JWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWAppDelegate.h; sourceTree = "<group>"; };
+		D5CF3E9B19152A4E000D7EA0 /* JWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWAppDelegate.m; sourceTree = "<group>"; };
+		D5CF3E9E19152A4E000D7EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		D5CF3EA119152A4E000D7EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		D5CF3EA319152A4E000D7EA0 /* JWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWViewController.h; sourceTree = "<group>"; };
+		D5CF3EA419152A4E000D7EA0 /* JWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWViewController.m; sourceTree = "<group>"; };
+		D5CF3EA619152A4E000D7EA0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D5CF3EAC19152A4E000D7EA0 /* JesterWildAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JesterWildAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5CF3EAD19152A4E000D7EA0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D5CF3EB519152A4E000D7EA0 /* JesterWildAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JesterWildAppTests-Info.plist"; sourceTree = "<group>"; };
+		D5CF3EB719152A4E000D7EA0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D5CF3EB919152A4E000D7EA0 /* JesterWildAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JesterWildAppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D5CF3E8519152A4E000D7EA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5CF3E8E19152A4E000D7EA0 /* CoreGraphics.framework in Frameworks */,
+				D5CF3E9019152A4E000D7EA0 /* UIKit.framework in Frameworks */,
+				D5CF3E8C19152A4E000D7EA0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5CF3EA919152A4E000D7EA0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5CF3EAE19152A4E000D7EA0 /* XCTest.framework in Frameworks */,
+				D5CF3EB019152A4E000D7EA0 /* UIKit.framework in Frameworks */,
+				D5CF3EAF19152A4E000D7EA0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D5CF3E7F19152A4D000D7EA0 = {
+			isa = PBXGroup;
+			children = (
+				D5CF3E9119152A4E000D7EA0 /* JesterWildApp */,
+				D5CF3EB319152A4E000D7EA0 /* JesterWildAppTests */,
+				D5CF3E8A19152A4E000D7EA0 /* Frameworks */,
+				D5CF3E8919152A4E000D7EA0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D5CF3E8919152A4E000D7EA0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5CF3E8819152A4E000D7EA0 /* JesterWildApp.app */,
+				D5CF3EAC19152A4E000D7EA0 /* JesterWildAppTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D5CF3E8A19152A4E000D7EA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D5CF3E8B19152A4E000D7EA0 /* Foundation.framework */,
+				D5CF3E8D19152A4E000D7EA0 /* CoreGraphics.framework */,
+				D5CF3E8F19152A4E000D7EA0 /* UIKit.framework */,
+				D5CF3EAD19152A4E000D7EA0 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D5CF3E9119152A4E000D7EA0 /* JesterWildApp */ = {
+			isa = PBXGroup;
+			children = (
+				D5CF3E9A19152A4E000D7EA0 /* JWAppDelegate.h */,
+				D5CF3E9B19152A4E000D7EA0 /* JWAppDelegate.m */,
+				D5CF3E9D19152A4E000D7EA0 /* Main_iPhone.storyboard */,
+				D5CF3EA019152A4E000D7EA0 /* Main_iPad.storyboard */,
+				D5CF3EA319152A4E000D7EA0 /* JWViewController.h */,
+				D5CF3EA419152A4E000D7EA0 /* JWViewController.m */,
+				D5CF3EA619152A4E000D7EA0 /* Images.xcassets */,
+				D5CF3E9219152A4E000D7EA0 /* Supporting Files */,
+			);
+			path = JesterWildApp;
+			sourceTree = "<group>";
+		};
+		D5CF3E9219152A4E000D7EA0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5CF3E9319152A4E000D7EA0 /* JesterWildApp-Info.plist */,
+				D5CF3E9419152A4E000D7EA0 /* InfoPlist.strings */,
+				D5CF3E9719152A4E000D7EA0 /* main.m */,
+				D5CF3E9919152A4E000D7EA0 /* JesterWildApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D5CF3EB319152A4E000D7EA0 /* JesterWildAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D5CF3EB919152A4E000D7EA0 /* JesterWildAppTests.m */,
+				D5CF3EB419152A4E000D7EA0 /* Supporting Files */,
+			);
+			path = JesterWildAppTests;
+			sourceTree = "<group>";
+		};
+		D5CF3EB419152A4E000D7EA0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D5CF3EB519152A4E000D7EA0 /* JesterWildAppTests-Info.plist */,
+				D5CF3EB619152A4E000D7EA0 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D5CF3E8719152A4E000D7EA0 /* JesterWildApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5CF3EBD19152A4E000D7EA0 /* Build configuration list for PBXNativeTarget "JesterWildApp" */;
+			buildPhases = (
+				D5CF3E8419152A4E000D7EA0 /* Sources */,
+				D5CF3E8519152A4E000D7EA0 /* Frameworks */,
+				D5CF3E8619152A4E000D7EA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JesterWildApp;
+			productName = JesterWildApp;
+			productReference = D5CF3E8819152A4E000D7EA0 /* JesterWildApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D5CF3EAB19152A4E000D7EA0 /* JesterWildAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D5CF3EC019152A4E000D7EA0 /* Build configuration list for PBXNativeTarget "JesterWildAppTests" */;
+			buildPhases = (
+				D5CF3EA819152A4E000D7EA0 /* Sources */,
+				D5CF3EA919152A4E000D7EA0 /* Frameworks */,
+				D5CF3EAA19152A4E000D7EA0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D5CF3EB219152A4E000D7EA0 /* PBXTargetDependency */,
+			);
+			name = JesterWildAppTests;
+			productName = JesterWildAppTests;
+			productReference = D5CF3EAC19152A4E000D7EA0 /* JesterWildAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D5CF3E8019152A4D000D7EA0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = JW;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Gerard Moreno-Torres Bertran";
+				TargetAttributes = {
+					D5CF3EAB19152A4E000D7EA0 = {
+						TestTargetID = D5CF3E8719152A4E000D7EA0;
+					};
+				};
+			};
+			buildConfigurationList = D5CF3E8319152A4D000D7EA0 /* Build configuration list for PBXProject "JesterWildApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D5CF3E7F19152A4D000D7EA0;
+			productRefGroup = D5CF3E8919152A4E000D7EA0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D5CF3E8719152A4E000D7EA0 /* JesterWildApp */,
+				D5CF3EAB19152A4E000D7EA0 /* JesterWildAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5CF3E8619152A4E000D7EA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5CF3EA219152A4E000D7EA0 /* Main_iPad.storyboard in Resources */,
+				D5CF3EA719152A4E000D7EA0 /* Images.xcassets in Resources */,
+				D5CF3E9F19152A4E000D7EA0 /* Main_iPhone.storyboard in Resources */,
+				D5CF3E9619152A4E000D7EA0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5CF3EAA19152A4E000D7EA0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5CF3EB819152A4E000D7EA0 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D5CF3E8419152A4E000D7EA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5CF3E9819152A4E000D7EA0 /* main.m in Sources */,
+				D5CF3EA519152A4E000D7EA0 /* JWViewController.m in Sources */,
+				D5CF3E9C19152A4E000D7EA0 /* JWAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D5CF3EA819152A4E000D7EA0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D5CF3EBA19152A4E000D7EA0 /* JesterWildAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D5CF3EB219152A4E000D7EA0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D5CF3E8719152A4E000D7EA0 /* JesterWildApp */;
+			targetProxy = D5CF3EB119152A4E000D7EA0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D5CF3E9419152A4E000D7EA0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5CF3E9519152A4E000D7EA0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D5CF3E9D19152A4E000D7EA0 /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5CF3E9E19152A4E000D7EA0 /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		D5CF3EA019152A4E000D7EA0 /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5CF3EA119152A4E000D7EA0 /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		D5CF3EB619152A4E000D7EA0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D5CF3EB719152A4E000D7EA0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D5CF3EBB19152A4E000D7EA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D5CF3EBC19152A4E000D7EA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D5CF3EBE19152A4E000D7EA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JesterWildApp/JesterWildApp-Prefix.pch";
+				INFOPLIST_FILE = "JesterWildApp/JesterWildApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D5CF3EBF19152A4E000D7EA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JesterWildApp/JesterWildApp-Prefix.pch";
+				INFOPLIST_FILE = "JesterWildApp/JesterWildApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D5CF3EC119152A4E000D7EA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JesterWildApp.app/JesterWildApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JesterWildApp/JesterWildApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "JesterWildAppTests/JesterWildAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D5CF3EC219152A4E000D7EA0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/JesterWildApp.app/JesterWildApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "JesterWildApp/JesterWildApp-Prefix.pch";
+				INFOPLIST_FILE = "JesterWildAppTests/JesterWildAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D5CF3E8319152A4D000D7EA0 /* Build configuration list for PBXProject "JesterWildApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5CF3EBB19152A4E000D7EA0 /* Debug */,
+				D5CF3EBC19152A4E000D7EA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D5CF3EBD19152A4E000D7EA0 /* Build configuration list for PBXNativeTarget "JesterWildApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5CF3EBE19152A4E000D7EA0 /* Debug */,
+				D5CF3EBF19152A4E000D7EA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D5CF3EC019152A4E000D7EA0 /* Build configuration list for PBXNativeTarget "JesterWildAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D5CF3EC119152A4E000D7EA0 /* Debug */,
+				D5CF3EC219152A4E000D7EA0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D5CF3E8019152A4D000D7EA0 /* Project object */;
+}
