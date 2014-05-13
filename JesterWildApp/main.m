@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "JWApplication.h"
 #import "JWAppDelegate.h"
 
 int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([JWAppDelegate class]));
+        return UIApplicationMain(argc, argv,  NSStringFromClass([JWApplication class]), NSStringFromClass([JWAppDelegate class]));
     }
 }
