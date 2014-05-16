@@ -16,11 +16,12 @@
 - (void) initializeWithProgressBar:(UISlider*)slider andTimerLabel:(UILabel*) label;
 - (void) play;
 - (void) pause;
-- (void) next;
-- (void) previous;
+- (BOOL) next;
+- (BOOL) previous;
 - (void) setVolume:(float) value;
 - (void) seekToTime:(float) value;
 - (NSString*) currentTitle;
 - (AVPlayer*) player;
+- (double) duration;
 
 @end

@@ -10,6 +10,8 @@
 #import "JWMusicStreamer.h"
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVPlayer.h>
+#import <MediaPlayer/MPNowPlayingInfoCenter.h>
+#import <MediaPlayer/MPMediaItem.h>
 #import "Notifications.h"
 
 @interface JWViewController ()
@@ -79,12 +81,32 @@ extern NSString *remoteControlOtherButtonTapped;
     [super viewDidLoad];
     streamer = [[JWMusicStreamer alloc] init];
     [streamer initializeWithProgressBar:_progression andTimerLabel:_timerLabel];
-//  [_progression setThumbImage:[[UIImage alloc] init] forState:UIControlStateNormal];
     isPlaying = NO;
-    _showTitle.text = [streamer currentTitle];
-    
+
     NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:nil name:nil object:streamer.player];
+    
+    [self reloadUI];
+}
+
+- (void) reloadUI
+{
+    _timerLabel.text = @"00:00";
+    _progression.value = 0;
+    _showTitle.text = [streamer currentTitle];
+
+    
+    NSArray *keys = [NSArray arrayWithObjects:
+                     MPMediaItemPropertyTitle,
+                     MPMediaItemPropertyPlaybackDuration,
+                     nil];
+    NSArray *values = [NSArray arrayWithObjects:
+                       [streamer currentTitle],
+                       [NSNumber numberWithDouble:[streamer duration]],
+                       nil];
+    
+    NSDictionary *mediaInfo = [NSDictionary dictionaryWithObjects:values forKeys:keys];
+    [[MPNowPlayingInfoCenter defaultCenter] setNowPlayingInfo:mediaInfo];
 }
 
 - (void)didReceiveMemoryWarning
@@ -117,7 +139,7 @@ extern NSString *remoteControlOtherButtonTapped;
     isPlaying = YES;
 }
 
-- (void)  pause
+- (void) pause
 {
     [streamer pause];
     [_playPauseButton setImage:[UIImage imageNamed:@"play-100"] forState:UIControlStateNormal];
@@ -126,16 +148,34 @@ extern NSString *remoteControlOtherButtonTapped;
 
 - (IBAction)previous
 {
-    [streamer previous];
+    if (![streamer previous])
+        return;
+    
     [self pause];
-    _showTitle.text = [streamer currentTitle];
+
+    CGRect origin = _showTitle.frame;
+    _showTitle.frame = CGRectMake(origin.origin.x - 1000, origin.origin.y, origin.size.width, origin.size.height);
+    [UIView animateWithDuration:0.35 animations:^(void){
+        _showTitle.frame = origin;
+    }];
+    
+    [self reloadUI];
 }
 
 - (IBAction)next
 {
-    [streamer next];
+    if (![streamer next])
+        return;
+    
     [self pause];
-    _showTitle.text = [streamer currentTitle];
+    
+    CGRect origin = _showTitle.frame;
+    _showTitle.frame = CGRectMake(origin.origin.x + 1000, origin.origin.y, origin.size.width, origin.size.height);
+    [UIView animateWithDuration:0.35 animations:^(void){
+        _showTitle.frame = origin;
+    }];
+    
+    [self reloadUI];
 }
 
 @end

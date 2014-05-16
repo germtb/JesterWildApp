@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface JWSShows : NSObject
+@interface JWShows : NSObject
 
 - (void) initialize;
 - (void) addURL : (NSString*) url withTitle: (NSString*) title;

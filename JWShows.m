@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 Gerard Moreno-Torres Bertran. All rights reserved.
 //
 
-#import "JWSShows.h"
+#import "JWShows.h"
 
-@interface JWSShows () {
+@interface JWShows () {
     NSUInteger index;
     NSMutableArray* shows;
     NSMutableArray* titles;
@@ -16,7 +16,7 @@
 
 @end
 
-@implementation JWSShows
+@implementation JWShows
 
 - (void) initialize {
     index = -1;
