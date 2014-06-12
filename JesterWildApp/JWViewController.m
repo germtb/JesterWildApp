@@ -79,14 +79,45 @@ extern NSString *remoteControlOtherButtonTapped;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //Initialize streamer
     streamer = [[JWMusicStreamer alloc] init];
     [streamer initializeWithProgressBar:_progression andTimerLabel:_timerLabel];
     isPlaying = NO;
-
+    
+    //Link the streamer to the notification center
     NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:nil name:nil object:streamer.player];
     
+    //Download file: https://dl.dropboxusercontent.com/u/140127353/shows.xml
+    NSString *url = @"https://dl.dropboxusercontent.com/u/140127353/shows.xml";
+    NSURLRequest *postRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
+    NSHTTPURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:postRequest returningResponse:&response error:&error];
+    
+    //Parse
+    NSXMLParser *xmlParser = [[NSXMLParser alloc ] initWithData:responseData];
+    xmlParser.delegate = self;
+    BOOL result = xmlParser.parse;
+    
+    if (!result){
+        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"There seems to be no internet connection" delegate:nil cancelButtonTitle:@"Exit" otherButtonTitles:nil] show];
+        exit(0);
+    }
+
     [self reloadUI];
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qualifiedName
+    attributes:(NSDictionary *)attributeDict {
+    
+    if([elementName isEqualToString:@"show"]) {
+        NSString *url = [attributeDict objectForKey:@"url"];
+        NSString *title = [attributeDict objectForKey:@"title"];
+        [streamer addShow:url withTitle:title];
+    }
 }
 
 - (void) reloadUI

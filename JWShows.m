@@ -24,7 +24,7 @@
     titles = [[NSMutableArray alloc] init];
 }
 
-- (void) addURL:(NSString *)url withTitle:(NSString *)title {
+- (void) addShow:(NSString *)url withTitle:(NSString *)title {
     [shows addObject:[[NSURL alloc] initWithString:url]];
     [titles addObject:title];
     index++;

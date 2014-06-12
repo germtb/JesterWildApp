@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JWViewController : UIViewController
+@interface JWViewController : UIViewController <NSXMLParserDelegate>
 
 @property (strong, nonatomic) IBOutlet UISlider *progression;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;

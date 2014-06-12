@@ -17,11 +17,13 @@
 - (void) play;
 - (void) pause;
 - (BOOL) next;
+- (void) initPlayer;
 - (BOOL) previous;
 - (void) setVolume:(float) value;
 - (void) seekToTime:(float) value;
 - (NSString*) currentTitle;
 - (AVPlayer*) player;
 - (double) duration;
+- (void) addShow : (NSString*) url withTitle: (NSString*) title;
 
 @end
