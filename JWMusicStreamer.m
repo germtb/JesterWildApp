@@ -38,6 +38,9 @@
     [shows addShow:@"http://www.jesterwild.com/podcast/100508_jesterwildshow.mp3" withTitle:@"Volume 01 - Mr. Mojo"];
     
     player = [[AVPlayer alloc] initWithURL:[shows current]];
+    
+    [progressBar addTarget:self action:@selector(deattachProgressBar) forControlEvents:UIControlEventTouchDown];
+    [progressBar addTarget:self action:@selector(attachProgressBar) forControlEvents:UIControlEventTouchUpInside |UIControlEventTouchUpOutside];
     [self setProgressBarBlock];
 }
 
@@ -90,12 +93,18 @@
     return [shows currentTitle];
 }
 
-- (void) seekToTime:(float)value
+- (void) attachProgressBar
+{
+    [player seekToTime:CMTimeMakeWithSeconds(CMTimeGetSeconds(player.currentItem.asset.duration)*progressBar.value,1)];
+    [self performSelector:@selector(play)];
+    [self performSelector:@selector(setProgressBarBlock)];
+//    [self performSelector:@selector(play) withObject:nil afterDelay:0.1];
+//    [self performSelector:@selector(setProgressBarBlock) withObject:nil afterDelay:0.1];
+}
+
+- (void) deattachProgressBar
 {
     [player removeTimeObserver:progressBarBlock];
-    [player seekToTime:CMTimeMakeWithSeconds(CMTimeGetSeconds(player.currentItem.asset.duration)*value,1)];
-    [self performSelector:@selector(play) withObject:nil afterDelay:1.0];
-    [self performSelector:@selector(setProgressBarBlock) withObject:nil afterDelay:1.0];
 }
 
 - (void) setProgressBarBlock

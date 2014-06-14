@@ -145,11 +145,6 @@ extern NSString *remoteControlOtherButtonTapped;
     [super didReceiveMemoryWarning];
 }
 
-- (IBAction)progressionChanged:(UISlider *)sender
-{
-    [streamer seekToTime:sender.value];
-}
-
 - (IBAction)volumeChanged:(UISlider *)sender
 {
     [streamer setVolume:[sender value]];

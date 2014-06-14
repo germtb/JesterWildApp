@@ -26,9 +26,6 @@
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" continuous="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5p-4h-2or">
                                 <rect key="frame" x="322" y="866" width="428" height="31"/>
-                                <connections>
-                                    <action selector="progressionChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Z4z-eQ-Lgl"/>
-                                </connections>
                             </slider>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5RF-O9-lBM">
                                 <rect key="frame" x="18" y="866" width="197" height="31"/>
