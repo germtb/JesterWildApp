@@ -10,11 +10,11 @@
 
 @interface JWShows : NSObject
 
-- (void) initialize;
-- (void) addShow : (NSString*) url withTitle: (NSString*) title;
+- (void) addShow : (NSString*) showURL withTitle: (NSString*) title withImage: (NSString*) imageURL;
 - (NSURL*) next;
 - (NSURL*) previous;
-- (NSURL*) current;
+- (NSURL*) currentShow;
 - (NSString*) currentTitle;
+- (NSURL*) currentImage;
 
 @end

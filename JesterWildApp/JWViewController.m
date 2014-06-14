@@ -81,13 +81,16 @@ extern NSString *remoteControlOtherButtonTapped;
     [super viewDidLoad];
     
     //Initialize streamer
-    streamer = [[JWMusicStreamer alloc] init];
-    [streamer initializeWithProgressBar:_progression andTimerLabel:_timerLabel];
+    streamer = [[JWMusicStreamer alloc] initWithProgressBar:_progression andTimerLabel:_timerLabel];
     isPlaying = NO;
+    
+    //Init de player
+    [streamer initPlayer];
     
     //Link the streamer to the notification center
     NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:nil name:nil object:streamer.player];
+
     
     //Download file: https://dl.dropboxusercontent.com/u/140127353/shows.xml
     NSString *url = @"https://dl.dropboxusercontent.com/u/140127353/shows.xml";
@@ -105,6 +108,7 @@ extern NSString *remoteControlOtherButtonTapped;
         [[[UIAlertView alloc] initWithTitle:@"Error" message:@"There seems to be no internet connection" delegate:nil cancelButtonTitle:@"Exit" otherButtonTitles:nil] show];
         exit(0);
     }
+    
 
     [self reloadUI];
 }
@@ -114,9 +118,10 @@ extern NSString *remoteControlOtherButtonTapped;
     attributes:(NSDictionary *)attributeDict {
     
     if([elementName isEqualToString:@"show"]) {
-        NSString *url = [attributeDict objectForKey:@"url"];
+        NSString *showURL = [attributeDict objectForKey:@"showURL"];
         NSString *title = [attributeDict objectForKey:@"title"];
-        [streamer addShow:url withTitle:title];
+        NSString *imageURL = [attributeDict objectForKey:@"imageURL"];
+        [streamer addShow:showURL withTitle:title withImage:imageURL];
     }
 }
 

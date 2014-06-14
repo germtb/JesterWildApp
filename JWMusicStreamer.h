@@ -13,17 +13,16 @@
 
 @interface JWMusicStreamer : NSObject
 
-- (void) initializeWithProgressBar:(UISlider*)slider andTimerLabel:(UILabel*) label;
+- (id) initWithProgressBar:(UISlider*)slider andTimerLabel:(UILabel*) label;
 - (void) play;
 - (void) pause;
 - (BOOL) next;
 - (void) initPlayer;
 - (BOOL) previous;
 - (void) setVolume:(float) value;
-- (void) seekToTime:(float) value;
 - (NSString*) currentTitle;
 - (AVPlayer*) player;
 - (double) duration;
-- (void) addShow : (NSString*) url withTitle: (NSString*) title;
+- (void) addShow:(NSString *)showURL withTitle:(NSString *)title withImage:(NSString *)imageURL;
 
 @end

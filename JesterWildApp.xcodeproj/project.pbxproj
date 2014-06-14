@@ -19,7 +19,7 @@
 		D54B0E3E1925465A00B4656F /* rewind-100.png in Resources */ = {isa = PBXBuildFile; fileRef = D54B0E351925465A00B4656F /* rewind-100.png */; };
 		D54B0E3F1925465A00B4656F /* stop-100.png in Resources */ = {isa = PBXBuildFile; fileRef = D54B0E361925465A00B4656F /* stop-100.png */; };
 		D54B0E411925474400B4656F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54B0E401925474400B4656F /* Media.xcassets */; };
-		D553C67A1915B023006DD724 /* vinyl.png in Resources */ = {isa = PBXBuildFile; fileRef = D553C6791915B023006DD724 /* vinyl.png */; };
+		D5618455194CA89000011FCC /* vinyl.png in Resources */ = {isa = PBXBuildFile; fileRef = D5618454194CA89000011FCC /* vinyl.png */; };
 		D5CF3E8C19152A4E000D7EA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8B19152A4E000D7EA0 /* Foundation.framework */; };
 		D5CF3E8E19152A4E000D7EA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8D19152A4E000D7EA0 /* CoreGraphics.framework */; };
 		D5CF3E9019152A4E000D7EA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8F19152A4E000D7EA0 /* UIKit.framework */; };
@@ -64,7 +64,7 @@
 		D54B0E351925465A00B4656F /* rewind-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rewind-100.png"; path = "Images.xcassets/rewind-100.png"; sourceTree = "<group>"; };
 		D54B0E361925465A00B4656F /* stop-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stop-100.png"; path = "Images.xcassets/stop-100.png"; sourceTree = "<group>"; };
 		D54B0E401925474400B4656F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
-		D553C6791915B023006DD724 /* vinyl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vinyl.png; path = ../../../../Desktop/vinyl.png; sourceTree = "<group>"; };
+		D5618454194CA89000011FCC /* vinyl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vinyl.png; path = Images.xcassets/vinyl.png; sourceTree = "<group>"; };
 		D5CF3E8819152A4E000D7EA0 /* JesterWildApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JesterWildApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CF3E8B19152A4E000D7EA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5CF3E8D19152A4E000D7EA0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +117,7 @@
 		D553C6661915AD52006DD724 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D5618454194CA89000011FCC /* vinyl.png */,
 				D54B0E2E1925465A00B4656F /* fast_forward-100.png */,
 				D54B0E2F1925465A00B4656F /* high_volume-100.png */,
 				D54B0E301925465A00B4656F /* music_record-100.png */,
@@ -126,7 +127,6 @@
 				D54B0E341925465A00B4656F /* play-100.png */,
 				D54B0E351925465A00B4656F /* rewind-100.png */,
 				D54B0E361925465A00B4656F /* stop-100.png */,
-				D553C6791915B023006DD724 /* vinyl.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -315,11 +315,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D553C67A1915B023006DD724 /* vinyl.png in Resources */,
 				D5CF3EA219152A4E000D7EA0 /* Main_iPad.storyboard in Resources */,
 				D54B0E3C1925465A00B4656F /* pause-100.png in Resources */,
 				D54B0E3F1925465A00B4656F /* stop-100.png in Resources */,
 				D54B0E3B1925465A00B4656F /* mute-100.png in Resources */,
+				D5618455194CA89000011FCC /* vinyl.png in Resources */,
 				D54B0E3E1925465A00B4656F /* rewind-100.png in Resources */,
 				D54B0E371925465A00B4656F /* fast_forward-100.png in Resources */,
 				D54B0E391925465A00B4656F /* music_record-100.png in Resources */,

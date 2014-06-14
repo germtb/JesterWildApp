@@ -27,29 +27,30 @@
     return player;
 }
 
-- (void) initializeWithProgressBar:(UISlider*)slider andTimerLabel:(UILabel *)label
+- (id) initWithProgressBar:(UISlider*)slider andTimerLabel:(UILabel *)label
 {
+    self = [super init];
     progressBar = slider;
     timerLabel = label;
     
     shows = [[JWShows alloc] init];
-    [shows initialize];
     
-    [shows addShow:@"http://www.jesterwild.com/podcast/100508_jesterwildshow.mp3" withTitle:@"Volume 01 - Mr. Mojo"];
-    
-    player = [[AVPlayer alloc] initWithURL:[shows current]];
+    [shows addShow:@"http://www.jesterwild.com/podcast/100508_jesterwildshow.mp3" withTitle:@"Volume 01 - Mr. Mojo" withImage:nil];
     
     [progressBar addTarget:self action:@selector(deattachProgressBar) forControlEvents:UIControlEventTouchDown];
     [progressBar addTarget:self action:@selector(attachProgressBar) forControlEvents:UIControlEventTouchUpInside |UIControlEventTouchUpOutside];
-    [self setProgressBarBlock];
+    
+//  [self initPlayer];
+    return self;
 }
 
 - (void) initPlayer {
-
+    player = [[AVPlayer alloc] initWithURL:[shows currentShow]];
+    [self setProgressBarBlock];
 }
 
-- (void) addShow:(NSString *)url withTitle:(NSString *)title {
-    [shows addShow:url withTitle:title];
+- (void) addShow:(NSString *)showURL withTitle:(NSString *)title withImage:(NSString *)imageURL{
+    [shows addShow:showURL withTitle:title withImage:imageURL];
 }
 
 - (void) play
@@ -98,8 +99,6 @@
     [player seekToTime:CMTimeMakeWithSeconds(CMTimeGetSeconds(player.currentItem.asset.duration)*progressBar.value,1)];
     [self performSelector:@selector(play)];
     [self performSelector:@selector(setProgressBarBlock)];
-//    [self performSelector:@selector(play) withObject:nil afterDelay:0.1];
-//    [self performSelector:@selector(setProgressBarBlock) withObject:nil afterDelay:0.1];
 }
 
 - (void) deattachProgressBar
