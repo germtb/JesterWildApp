@@ -2,9 +2,6 @@
 //  JWViewController.h
 //  JesterWildApp
 //
-//  Created by Gerard Moreno-Torres Bertran on 03/05/14.
-//  Copyright (c) 2014 Gerard Moreno-Torres Bertran. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 
@@ -14,10 +11,13 @@
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;
 @property (strong, nonatomic) IBOutlet UIButton *playPauseButton;
 @property (strong, nonatomic) IBOutlet UILabel *showTitle;
+@property (strong, nonatomic) IBOutlet UIImageView *showImage;
 
 - (IBAction)volumeChanged:(UISlider *)sender;
 - (IBAction)playPause;
 - (IBAction)next;
 - (IBAction)previous;
+- (IBAction)githubLink;
+- (IBAction)jesterwildLink;
 
 @end

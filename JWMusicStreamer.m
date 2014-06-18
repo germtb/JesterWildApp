@@ -2,117 +2,121 @@
 //  JWMusicStreamer.m
 //  JesterWildApp
 //
-//  Created by Gerard Moreno-Torres Bertran on 03/05/14.
-//  Copyright (c) 2014 Gerard Moreno-Torres Bertran. All rights reserved.
-//
 
 #import "JWMusicStreamer.h"
 #import "JWShows.h"
 
 @interface JWMusicStreamer ()
 {
-    AVPlayer* player;
-    JWShows* shows;
-    UISlider* progressBar;
-    UILabel* timerLabel;
-    id progressBarBlock;
+    NSUInteger index;
 }
+
+@property(retain,nonatomic) AVPlayer* player;
+@property(retain,nonatomic) JWShows* shows;
+@property(retain,nonatomic) UISlider* progressBar;
+@property(retain,nonatomic) UILabel* timerLabel;
+@property(retain,nonatomic) id progressBarBlock;
 
 @end
 
 @implementation JWMusicStreamer
 
-- (AVPlayer*) player
-{
-    return player;
-}
+@synthesize player = _player;
+@synthesize shows = _shows;
+@synthesize progressBar = _progressBar;
+@synthesize timerLabel = _timerLabel;
+@synthesize progressBarBlock = _progressBarBlock;
 
-- (id) initWithProgressBar:(UISlider*)slider andTimerLabel:(UILabel *)label
+- (id) initWithShows:(JWShows*) shows andProgressBar:(UISlider*)progressBar andTimerLabel:(UILabel*) timerLabel
 {
     self = [super init];
-    progressBar = slider;
-    timerLabel = label;
+    _shows = shows;
+    index = _shows.lastIndex;
+    _progressBar = progressBar;
+    _timerLabel = timerLabel;
+    [self atatchTouchEventsToProgressBar];
     
-    shows = [[JWShows alloc] init];
-    
-    [shows addShow:@"http://www.jesterwild.com/podcast/100508_jesterwildshow.mp3" withTitle:@"Volume 01 - Mr. Mojo" withImage:nil];
-    
-    [progressBar addTarget:self action:@selector(deattachProgressBar) forControlEvents:UIControlEventTouchDown];
-    [progressBar addTarget:self action:@selector(attachProgressBar) forControlEvents:UIControlEventTouchUpInside |UIControlEventTouchUpOutside];
-    
-//  [self initPlayer];
     return self;
 }
 
-- (void) initPlayer {
-    player = [[AVPlayer alloc] initWithURL:[shows currentShow]];
-    [self setProgressBarBlock];
+- (void) atatchTouchEventsToProgressBar
+{
+    [_progressBar addTarget:self action:@selector(deattachProgressBar) forControlEvents:UIControlEventTouchDown];
+    [_progressBar addTarget:self action:@selector(attachProgressBar) forControlEvents:UIControlEventTouchUpInside |UIControlEventTouchUpOutside];
 }
 
-- (void) addShow:(NSString *)showURL withTitle:(NSString *)title withImage:(NSString *)imageURL{
-    [shows addShow:showURL withTitle:title withImage:imageURL];
+- (void) initPlayer {
+    _player = [[AVPlayer alloc] initWithURL:[_shows showForIndex:_shows.lastIndex]];
+    [self setProgressBarBlock];
 }
 
 - (void) play
 {
-    [player play];
+    [_player play];
 }
 
 - (void) pause
 {
-    [player pause];
+    [_player pause];
 }
 
 - (BOOL) next
 {
-    NSURL* nextURL = [shows next];
+    NSURL *nextURL = [_shows showForIndex:(index + 1)];
     
     if (nextURL == nil)
         return NO;
 
-    [player removeTimeObserver:progressBarBlock];
-    player = [[AVPlayer alloc] initWithURL:nextURL];
+    index++;
+    [_player removeTimeObserver:_progressBarBlock];
+    _player = [[AVPlayer alloc] initWithURL:nextURL];
     [self setProgressBarBlock];
     return YES;
 }
 
 - (BOOL) previous
 {
-    NSURL* previousURL = [shows previous];
+    NSURL *previousURL = [_shows showForIndex:(index - 1)];
     
     if (previousURL == nil)
         return NO;
 
-    [player removeTimeObserver:progressBarBlock];
-    player = [[AVPlayer alloc] initWithURL:previousURL];
+    index--;
+    [_player removeTimeObserver:_progressBarBlock];
+    _player = [[AVPlayer alloc] initWithURL:previousURL];
     [self setProgressBarBlock];
     return YES;
 }
 
 - (NSString*) currentTitle
 {
-    return [shows currentTitle];
+    return [_shows titleForIndex:index];
+}
+
+- (UIImage*) currentImage
+{
+    return [_shows imageForIndex:index];
 }
 
 - (void) attachProgressBar
 {
-    [player seekToTime:CMTimeMakeWithSeconds(CMTimeGetSeconds(player.currentItem.asset.duration)*progressBar.value,1)];
+    [_player seekToTime:CMTimeMakeWithSeconds(CMTimeGetSeconds(_player.currentItem.asset.duration)*_progressBar.value,1)];
     [self performSelector:@selector(play)];
     [self performSelector:@selector(setProgressBarBlock)];
 }
 
 - (void) deattachProgressBar
 {
-    [player removeTimeObserver:progressBarBlock];
+    [_player removeTimeObserver:_progressBarBlock];
 }
 
 - (void) setProgressBarBlock
 {
-    __weak UISlider* wProgressBar = progressBar;
-    __weak UILabel* wTimerLabel = timerLabel;
-    __weak AVPlayer* wPlayer = player;
+    __weak UISlider* wProgressBar = _progressBar;
+    __weak UILabel* wTimerLabel = _timerLabel;
+    __weak AVPlayer* wPlayer = _player;
     
-    progressBarBlock = [player
+    _progressBarBlock = [_player
                         addPeriodicTimeObserverForInterval:CMTimeMake(33, 1000)
                         queue:nil
                         usingBlock:^(CMTime time)
@@ -128,14 +132,14 @@
 
 - (double) duration
 {
-    CMTime endTime = CMTimeConvertScale (player.currentItem.asset.duration, player.currentTime.timescale,kCMTimeRoundingMethod_RoundHalfAwayFromZero);
+    CMTime endTime = CMTimeConvertScale (_player.currentItem.asset.duration, _player.currentTime.timescale,kCMTimeRoundingMethod_RoundHalfAwayFromZero);
     
     return CMTimeGetSeconds(endTime);
 }
 
 - (void) setVolume:(float)value
 {
-    [player setVolume:value];
+    [_player setVolume:value];
 }
 
 + (NSString*) secondsToString : (int) time

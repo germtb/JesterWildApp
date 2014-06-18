@@ -2,11 +2,9 @@
 //  JWViewController.m
 //  JesterWildApp
 //
-//  Created by Gerard Moreno-Torres Bertran on 03/05/14.
-//  Copyright (c) 2014 Gerard Moreno-Torres Bertran. All rights reserved.
-//
 
 #import "JWViewController.h"
+#import "JWShows.h"
 #import "JWMusicStreamer.h"
 #import <Foundation/Foundation.h>
 #import <AVFoundation/AVPlayer.h>
@@ -17,6 +15,7 @@
 @interface JWViewController ()
 {
     JWMusicStreamer* streamer;
+    JWShows* shows;
     BOOL isPlaying;
 }
 
@@ -28,6 +27,7 @@
 @synthesize timerLabel = _timerLabel;
 @synthesize playPauseButton = _playPauseButton;
 @synthesize showTitle = _showTitle;
+@synthesize showImage = _showImage;
 
 extern NSString *remoteControlPlayButtonTapped;
 extern NSString *remoteControlPauseButtonTapped;
@@ -80,18 +80,9 @@ extern NSString *remoteControlOtherButtonTapped;
 {
     [super viewDidLoad];
     
-    //Initialize streamer
-    streamer = [[JWMusicStreamer alloc] initWithProgressBar:_progression andTimerLabel:_timerLabel];
-    isPlaying = NO;
-    
-    //Init de player
-    [streamer initPlayer];
-    
-    //Link the streamer to the notification center
-    NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
-    [notificationCenter addObserver:self selector:nil name:nil object:streamer.player];
+    //Initialize shows
+    shows = [[JWShows alloc] init];
 
-    
     //Download file: https://dl.dropboxusercontent.com/u/140127353/shows.xml
     NSString *url = @"https://dl.dropboxusercontent.com/u/140127353/shows.xml";
     NSURLRequest *postRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
@@ -105,11 +96,20 @@ extern NSString *remoteControlOtherButtonTapped;
     BOOL result = xmlParser.parse;
     
     if (!result){
-        [[[UIAlertView alloc] initWithTitle:@"Error" message:@"There seems to be no internet connection" delegate:nil cancelButtonTitle:@"Exit" otherButtonTitles:nil] show];
         exit(0);
     }
-    
 
+    //Initialize streamer
+    streamer = [[JWMusicStreamer alloc] initWithShows:shows andProgressBar:_progression andTimerLabel:_timerLabel];
+    isPlaying = NO;
+    
+    //Init de player
+    [streamer initPlayer];
+    
+    //Link the streamer to the notification center
+    NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver:self selector:nil name:nil object:streamer.player];
+    
     [self reloadUI];
 }
 
@@ -118,10 +118,12 @@ extern NSString *remoteControlOtherButtonTapped;
     attributes:(NSDictionary *)attributeDict {
     
     if([elementName isEqualToString:@"show"]) {
-        NSString *showURL = [attributeDict objectForKey:@"showURL"];
-        NSString *title = [attributeDict objectForKey:@"title"];
-        NSString *imageURL = [attributeDict objectForKey:@"imageURL"];
-        [streamer addShow:showURL withTitle:title withImage:imageURL];
+        NSURL *showURL = [[NSURL alloc] initWithString:attributeDict[@"showURL"]];
+        NSURL *imageURL = nil;
+        if (attributeDict[@"imageURL"] != nil)
+            imageURL = [[NSURL alloc] initWithString:attributeDict[@"imageURL"]];
+        JWShow *newShow = [[JWShow alloc] initWithShowURL:showURL andTitle:attributeDict[@"title"] andImageURL:imageURL];
+        [shows addShow:newShow];
     }
 }
 
@@ -130,7 +132,7 @@ extern NSString *remoteControlOtherButtonTapped;
     _timerLabel.text = @"00:00";
     _progression.value = 0;
     _showTitle.text = [streamer currentTitle];
-
+    _showImage.image = [streamer currentImage];
     
     NSArray *keys = [NSArray arrayWithObjects:
                      MPMediaItemPropertyTitle,
@@ -180,33 +182,46 @@ extern NSString *remoteControlOtherButtonTapped;
 - (IBAction)previous
 {
     if (![streamer previous])
+    {
         return;
+    }
     
     [self pause];
-
-    CGRect origin = _showTitle.frame;
-    _showTitle.frame = CGRectMake(origin.origin.x - 1000, origin.origin.y, origin.size.width, origin.size.height);
-    [UIView animateWithDuration:0.35 animations:^(void){
-        _showTitle.frame = origin;
-    }];
-    
+    [self animateHorizontalSlideWithView:_showTitle withHorizontalDistance:-1000];
+    [self animateHorizontalSlideWithView:_showImage withHorizontalDistance:-1000];
     [self reloadUI];
+}
+
+- (IBAction)githubLink
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/germtb/JesterWildApp"]];
+}
+
+- (IBAction)jesterwildLink
+{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.jesterwild.com"]];    
 }
 
 - (IBAction)next
 {
     if (![streamer next])
+    {
         return;
+    }
     
     [self pause];
-    
-    CGRect origin = _showTitle.frame;
-    _showTitle.frame = CGRectMake(origin.origin.x + 1000, origin.origin.y, origin.size.width, origin.size.height);
-    [UIView animateWithDuration:0.35 animations:^(void){
-        _showTitle.frame = origin;
-    }];
-    
+    [self animateHorizontalSlideWithView:_showTitle withHorizontalDistance:1000];
+    [self animateHorizontalSlideWithView:_showImage withHorizontalDistance:1000];
     [self reloadUI];
+}
+
+- (void) animateHorizontalSlideWithView:(UIView*) view withHorizontalDistance: (float) horizontalDistance
+{
+    CGRect origin = view.frame;
+    view.frame = CGRectMake(origin.origin.x + horizontalDistance, origin.origin.y, origin.size.width, origin.size.height);
+    [UIView animateWithDuration:0.35 animations:^(void){
+        view.frame = origin;
+    }];
 }
 
 @end

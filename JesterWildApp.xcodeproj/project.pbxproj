@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D50476D7191556BD00E3E9E7 /* JWShows.m in Sources */ = {isa = PBXBuildFile; fileRef = D50476D6191556BD00E3E9E7 /* JWShows.m */; };
 		D526E9C51921966C000A134E /* JWApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = D526E9C41921966C000A134E /* JWApplication.m */; };
+		D539581F195105D2004E6CFC /* vinyl-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D539581E195105D2004E6CFC /* vinyl-ipad.png */; };
 		D54B0E371925465A00B4656F /* fast_forward-100.png in Resources */ = {isa = PBXBuildFile; fileRef = D54B0E2E1925465A00B4656F /* fast_forward-100.png */; };
 		D54B0E381925465A00B4656F /* high_volume-100.png in Resources */ = {isa = PBXBuildFile; fileRef = D54B0E2F1925465A00B4656F /* high_volume-100.png */; };
 		D54B0E391925465A00B4656F /* music_record-100.png in Resources */ = {isa = PBXBuildFile; fileRef = D54B0E301925465A00B4656F /* music_record-100.png */; };
@@ -20,6 +21,7 @@
 		D54B0E3F1925465A00B4656F /* stop-100.png in Resources */ = {isa = PBXBuildFile; fileRef = D54B0E361925465A00B4656F /* stop-100.png */; };
 		D54B0E411925474400B4656F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D54B0E401925474400B4656F /* Media.xcassets */; };
 		D5618455194CA89000011FCC /* vinyl.png in Resources */ = {isa = PBXBuildFile; fileRef = D5618454194CA89000011FCC /* vinyl.png */; };
+		D5B529B5194FAABD0018ADC1 /* JWShow.m in Sources */ = {isa = PBXBuildFile; fileRef = D5B529B4194FAABD0018ADC1 /* JWShow.m */; };
 		D5CF3E8C19152A4E000D7EA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8B19152A4E000D7EA0 /* Foundation.framework */; };
 		D5CF3E8E19152A4E000D7EA0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8D19152A4E000D7EA0 /* CoreGraphics.framework */; };
 		D5CF3E9019152A4E000D7EA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8F19152A4E000D7EA0 /* UIKit.framework */; };
@@ -54,6 +56,7 @@
 		D526E9C31921966C000A134E /* JWApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWApplication.h; sourceTree = "<group>"; };
 		D526E9C41921966C000A134E /* JWApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWApplication.m; sourceTree = "<group>"; };
 		D526E9C619219759000A134E /* Notifications.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Notifications.h; path = JesterWildApp/Notifications.h; sourceTree = "<group>"; };
+		D539581E195105D2004E6CFC /* vinyl-ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vinyl-ipad.png"; path = "Images.xcassets/vinyl-ipad.png"; sourceTree = "<group>"; };
 		D54B0E2E1925465A00B4656F /* fast_forward-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "fast_forward-100.png"; path = "Images.xcassets/fast_forward-100.png"; sourceTree = "<group>"; };
 		D54B0E2F1925465A00B4656F /* high_volume-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "high_volume-100.png"; path = "Images.xcassets/high_volume-100.png"; sourceTree = "<group>"; };
 		D54B0E301925465A00B4656F /* music_record-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music_record-100.png"; path = "Images.xcassets/music_record-100.png"; sourceTree = "<group>"; };
@@ -65,6 +68,8 @@
 		D54B0E361925465A00B4656F /* stop-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "stop-100.png"; path = "Images.xcassets/stop-100.png"; sourceTree = "<group>"; };
 		D54B0E401925474400B4656F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		D5618454194CA89000011FCC /* vinyl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = vinyl.png; path = Images.xcassets/vinyl.png; sourceTree = "<group>"; };
+		D5B529B3194FAABC0018ADC1 /* JWShow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWShow.h; sourceTree = "<group>"; };
+		D5B529B4194FAABD0018ADC1 /* JWShow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWShow.m; sourceTree = "<group>"; };
 		D5CF3E8819152A4E000D7EA0 /* JesterWildApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JesterWildApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CF3E8B19152A4E000D7EA0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D5CF3E8D19152A4E000D7EA0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -117,6 +122,7 @@
 		D553C6661915AD52006DD724 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				D539581E195105D2004E6CFC /* vinyl-ipad.png */,
 				D5618454194CA89000011FCC /* vinyl.png */,
 				D54B0E2E1925465A00B4656F /* fast_forward-100.png */,
 				D54B0E2F1925465A00B4656F /* high_volume-100.png */,
@@ -220,6 +226,8 @@
 				D50476D6191556BD00E3E9E7 /* JWShows.m */,
 				D5F9392D1948FD4C00884AF1 /* JWXmlParserDelegate.m */,
 				D5F9392F1948FD6C00884AF1 /* JWXmlParserDelegate.h */,
+				D5B529B3194FAABC0018ADC1 /* JWShow.h */,
+				D5B529B4194FAABD0018ADC1 /* JWShow.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -329,6 +337,7 @@
 				D54B0E381925465A00B4656F /* high_volume-100.png in Resources */,
 				D5CF3E9619152A4E000D7EA0 /* InfoPlist.strings in Resources */,
 				D54B0E3D1925465A00B4656F /* play-100.png in Resources */,
+				D539581F195105D2004E6CFC /* vinyl-ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +361,7 @@
 				D50476D7191556BD00E3E9E7 /* JWShows.m in Sources */,
 				D5CF3EC619152B10000D7EA0 /* JWMusicStreamer.m in Sources */,
 				D5CF3EA519152A4E000D7EA0 /* JWViewController.m in Sources */,
+				D5B529B5194FAABD0018ADC1 /* JWShow.m in Sources */,
 				D5CF3E9C19152A4E000D7EA0 /* JWAppDelegate.m in Sources */,
 				D526E9C51921966C000A134E /* JWApplication.m in Sources */,
 			);

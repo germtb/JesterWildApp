@@ -2,9 +2,6 @@
 //  Notifications.h
 //  JesterWildApp
 //
-//  Created by Gerard Moreno-Torres Bertran on 13/05/14.
-//  Copyright (c) 2014 Gerard Moreno-Torres Bertran. All rights reserved.
-//
 
 #ifndef RemoteControl_Notifications_h
 #define RemoteControl_Notifications_h

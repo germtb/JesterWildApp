@@ -1,19 +1,14 @@
-    //
+//
 //  JWShows.m
 //  JesterWildApp
-//
-//  Created by Gerard Moreno-Torres Bertran on 03/05/14.
-//  Copyright (c) 2014 Gerard Moreno-Torres Bertran. All rights reserved.
 //
 
 #import "JWShows.h"
 
 @interface JWShows ()
 {
-    NSUInteger index;
-    NSMutableArray* shows;
-    NSMutableArray* titles;
-    NSMutableArray* images;
+    NSMutableDictionary *shows;
+    NSMutableDictionary *cachedImages;
 }
 
 @end
@@ -23,66 +18,51 @@
 - (id) init
 {
     self = [super init];
-    index = -1;
-    shows = [[NSMutableArray alloc] init];
-    titles = [[NSMutableArray alloc] init];
-    images = [[NSMutableArray alloc] init];
+    shows = [[NSMutableDictionary alloc] init];
+    cachedImages = [[NSMutableDictionary alloc] init];
     return self;
 }
 
-- (void) addShow:(NSString *) showURL withTitle:(NSString *)title withImage:(NSString *)imageURL
+- (void) addShow:(JWShow*) show
 {
-    [shows addObject:[[NSURL alloc] initWithString:showURL]];
-    [titles addObject:title];
+    [shows setObject:show forKey:[NSNumber numberWithLong:self.count]];
+}
+
+- (NSUInteger) count
+{
+    return shows.count;
+}
+
+- (NSUInteger) lastIndex
+{
+    return self.count - 1;
+}
+
+- (NSURL*) showForIndex:(NSUInteger)index
+{
+    return [shows[[NSNumber numberWithLong:index]] getShowURL];
+}
+
+- (NSString*) titleForIndex:(NSUInteger)index
+{
+    return [shows[[NSNumber numberWithLong:index]] getTitle];
+}
+
+- (UIImage*) imageForIndex:(NSUInteger)index
+{
+    NSNumber *key = [NSNumber numberWithLong:index];
     
-//    if (imageURL == nil)
-//       [images addObject:[[NSURL alloc] initWithString:imageURL]];
-//    else
-        [images addObject:showURL];
+    if (cachedImages[key] == nil)
+    {
+        if ([shows[key] getImageURL] != nil)
+        {
+            NSData *imageData = [[NSData alloc] initWithContentsOfURL: [shows[key] getImageURL]];
+            if (imageData != nil)
+                cachedImages[key] = [UIImage imageWithData:imageData];
+        }
+    }
     
-    index++;
-}
-
-- (void) addURL:(NSURL *)item
-{
-    [shows addObject:item];
-    index++;
-}
-
-- (NSURL*) currentShow
-{
-    if (index == -1) return nil;
-    return [shows objectAtIndex:index];
-}
-
-- (NSString*) currentTitle
-{
-    if (index == -1) return nil;
-    return [titles objectAtIndex:index];
-}
-
-- (NSURL*) currentImage
-{
-    if (index == -1) return nil;
-    return [images objectAtIndex:index];
-}
-
-- (NSURL*) next
-{
-    if (index == [shows count] - 1)
-        return nil;
-    
-    index++;
-    return [shows objectAtIndex:index];
-}
-
-- (NSURL*) previous
-{
-    if (index == 0)
-        return nil;
-    
-    index--;
-    return [shows objectAtIndex:index];
+    return cachedImages[key];
 }
 
 @end
