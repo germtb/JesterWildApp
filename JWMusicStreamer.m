@@ -68,9 +68,7 @@
         return NO;
 
     index++;
-    [_player removeTimeObserver:_progressBarBlock];
-    _player = [[AVPlayer alloc] initWithURL:nextURL];
-    [self setProgressBarBlock];
+    [self reinitPlayerWithURL:nextURL];
     return YES;
 }
 
@@ -82,10 +80,17 @@
         return NO;
 
     index--;
-    [_player removeTimeObserver:_progressBarBlock];
-    _player = [[AVPlayer alloc] initWithURL:previousURL];
-    [self setProgressBarBlock];
+    [self reinitPlayerWithURL:previousURL];
     return YES;
+}
+
+- (void) reinitPlayerWithURL:(NSURL*) url
+{
+    float oldVolume = _player.volume;
+    [_player removeTimeObserver:_progressBarBlock];
+    _player = [[AVPlayer alloc] initWithURL:url];
+    _player.volume = oldVolume;
+    [self setProgressBarBlock];
 }
 
 - (NSString*) currentTitle
@@ -168,9 +173,7 @@
         return NO;
     
     index = newIndex;
-    [_player removeTimeObserver:_progressBarBlock];
-    _player = [[AVPlayer alloc] initWithURL:URL];
-    [self setProgressBarBlock];
+    [self reinitPlayerWithURL:URL];
     return YES;
 }
 
