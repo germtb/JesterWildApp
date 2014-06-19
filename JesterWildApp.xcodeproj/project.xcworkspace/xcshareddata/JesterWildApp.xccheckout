@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>68673899-DF3F-47D8-8E9C-95E7AF022383</string>
+	<key>IDESourceControlProjectName</key>
+	<string>JesterWildApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>661C7A49-9D47-4E09-90D8-9E840539C228</key>
+		<string>https://github.com/germtb/JesterWildApp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>JesterWildApp.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>661C7A49-9D47-4E09-90D8-9E840539C228</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/germtb/JesterWildApp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>661C7A49-9D47-4E09-90D8-9E840539C228</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>661C7A49-9D47-4E09-90D8-9E840539C228</string>
+			<key>IDESourceControlWCCName</key>
+			<string>JesterWildApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>

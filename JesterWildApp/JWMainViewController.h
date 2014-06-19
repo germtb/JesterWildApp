@@ -4,8 +4,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JWStreamerViewProtocol.h"
 
-@interface JWViewController : UIViewController <NSXMLParserDelegate>
+@interface JWMainViewController : UIViewController <JWStreamerViewProtocol, NSXMLParserDelegate>
 
 @property (strong, nonatomic) IBOutlet UISlider *progression;
 @property (strong, nonatomic) IBOutlet UILabel *timerLabel;

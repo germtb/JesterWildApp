@@ -4,6 +4,7 @@
 //
 
 #import "JWAppDelegate.h"
+#import "JWMainViewController.h"
 
 @implementation JWAppDelegate
 
@@ -13,6 +14,25 @@
     [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:NULL];
     [[AVAudioSession sharedInstance] setActive:YES error:nil];
     [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    
+    self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+    
+    UIStoryboard *mainStoryboard;
+    
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+    {
+        mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPad" bundle:nil];
+    }
+    else
+    {
+        mainStoryboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    }
+    
+    JWMainViewController *viewController = (JWMainViewController*) [mainStoryboard instantiateViewControllerWithIdentifier: @"MainViewController"];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    self.window.rootViewController = navigationController;
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 							

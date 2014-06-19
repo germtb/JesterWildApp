@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E2B0D211952265C00CB792C /* JWShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B0D201952265C00CB792C /* JWShowsTableViewController.m */; };
+		0E2B0D2E195247BE00CB792C /* JWShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B0D2D195247BE00CB792C /* JWShowCell.m */; };
 		D50476D7191556BD00E3E9E7 /* JWShows.m in Sources */ = {isa = PBXBuildFile; fileRef = D50476D6191556BD00E3E9E7 /* JWShows.m */; };
 		D526E9C51921966C000A134E /* JWApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = D526E9C41921966C000A134E /* JWApplication.m */; };
 		D539581F195105D2004E6CFC /* vinyl-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D539581E195105D2004E6CFC /* vinyl-ipad.png */; };
@@ -30,14 +32,13 @@
 		D5CF3E9C19152A4E000D7EA0 /* JWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CF3E9B19152A4E000D7EA0 /* JWAppDelegate.m */; };
 		D5CF3E9F19152A4E000D7EA0 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CF3E9D19152A4E000D7EA0 /* Main_iPhone.storyboard */; };
 		D5CF3EA219152A4E000D7EA0 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5CF3EA019152A4E000D7EA0 /* Main_iPad.storyboard */; };
-		D5CF3EA519152A4E000D7EA0 /* JWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CF3EA419152A4E000D7EA0 /* JWViewController.m */; };
+		D5CF3EA519152A4E000D7EA0 /* JWMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CF3EA419152A4E000D7EA0 /* JWMainViewController.m */; };
 		D5CF3EAE19152A4E000D7EA0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3EAD19152A4E000D7EA0 /* XCTest.framework */; };
 		D5CF3EAF19152A4E000D7EA0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8B19152A4E000D7EA0 /* Foundation.framework */; };
 		D5CF3EB019152A4E000D7EA0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5CF3E8F19152A4E000D7EA0 /* UIKit.framework */; };
 		D5CF3EB819152A4E000D7EA0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D5CF3EB619152A4E000D7EA0 /* InfoPlist.strings */; };
 		D5CF3EBA19152A4E000D7EA0 /* JesterWildAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CF3EB919152A4E000D7EA0 /* JesterWildAppTests.m */; };
 		D5CF3EC619152B10000D7EA0 /* JWMusicStreamer.m in Sources */ = {isa = PBXBuildFile; fileRef = D5CF3EC519152B10000D7EA0 /* JWMusicStreamer.m */; };
-		D5F9392E1948FD4C00884AF1 /* JWXmlParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F9392D1948FD4C00884AF1 /* JWXmlParserDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E2B0D1F1952265C00CB792C /* JWShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWShowsTableViewController.h; sourceTree = "<group>"; };
+		0E2B0D201952265C00CB792C /* JWShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWShowsTableViewController.m; sourceTree = "<group>"; };
+		0E2B0D22195226AE00CB792C /* JWStreamerViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWStreamerViewProtocol.h; sourceTree = "<group>"; };
+		0E2B0D2C195247BE00CB792C /* JWShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWShowCell.h; sourceTree = "<group>"; };
+		0E2B0D2D195247BE00CB792C /* JWShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWShowCell.m; sourceTree = "<group>"; };
 		D50476D5191556BD00E3E9E7 /* JWShows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWShows.h; sourceTree = "<group>"; };
 		D50476D6191556BD00E3E9E7 /* JWShows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWShows.m; sourceTree = "<group>"; };
 		D526E9C31921966C000A134E /* JWApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWApplication.h; sourceTree = "<group>"; };
@@ -82,8 +88,8 @@
 		D5CF3E9B19152A4E000D7EA0 /* JWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWAppDelegate.m; sourceTree = "<group>"; };
 		D5CF3E9E19152A4E000D7EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		D5CF3EA119152A4E000D7EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		D5CF3EA319152A4E000D7EA0 /* JWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWViewController.h; sourceTree = "<group>"; };
-		D5CF3EA419152A4E000D7EA0 /* JWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWViewController.m; sourceTree = "<group>"; };
+		D5CF3EA319152A4E000D7EA0 /* JWMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWMainViewController.h; sourceTree = "<group>"; };
+		D5CF3EA419152A4E000D7EA0 /* JWMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWMainViewController.m; sourceTree = "<group>"; };
 		D5CF3EAC19152A4E000D7EA0 /* JesterWildAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JesterWildAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CF3EAD19152A4E000D7EA0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D5CF3EB519152A4E000D7EA0 /* JesterWildAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JesterWildAppTests-Info.plist"; sourceTree = "<group>"; };
@@ -91,8 +97,6 @@
 		D5CF3EB919152A4E000D7EA0 /* JesterWildAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JesterWildAppTests.m; sourceTree = "<group>"; };
 		D5CF3EC419152B10000D7EA0 /* JWMusicStreamer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWMusicStreamer.h; sourceTree = "<group>"; };
 		D5CF3EC519152B10000D7EA0 /* JWMusicStreamer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWMusicStreamer.m; sourceTree = "<group>"; };
-		D5F9392D1948FD4C00884AF1 /* JWXmlParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWXmlParserDelegate.m; sourceTree = "<group>"; };
-		D5F9392F1948FD6C00884AF1 /* JWXmlParserDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWXmlParserDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,11 +139,13 @@
 				D54B0E361925465A00B4656F /* stop-100.png */,
 			);
 			name = Images;
+			path = JesterWildApp;
 			sourceTree = "<group>";
 		};
 		D5CF3E7F19152A4D000D7EA0 = {
 			isa = PBXGroup;
 			children = (
+				D553C6661915AD52006DD724 /* Images */,
 				D5F9392A1948BC2100884AF1 /* Config */,
 				D5CF3EC319152AAC000D7EA0 /* Classes */,
 				D5CF3E9119152A4E000D7EA0 /* JesterWildApp */,
@@ -172,17 +178,21 @@
 		D5CF3E9119152A4E000D7EA0 /* JesterWildApp */ = {
 			isa = PBXGroup;
 			children = (
-				D553C6661915AD52006DD724 /* Images */,
+				0E2B0D1F1952265C00CB792C /* JWShowsTableViewController.h */,
+				0E2B0D201952265C00CB792C /* JWShowsTableViewController.m */,
+				0E2B0D2C195247BE00CB792C /* JWShowCell.h */,
+				0E2B0D2D195247BE00CB792C /* JWShowCell.m */,
 				D5CF3E9A19152A4E000D7EA0 /* JWAppDelegate.h */,
 				D5CF3E9B19152A4E000D7EA0 /* JWAppDelegate.m */,
 				D5CF3E9D19152A4E000D7EA0 /* Main_iPhone.storyboard */,
 				D5CF3EA019152A4E000D7EA0 /* Main_iPad.storyboard */,
-				D5CF3EA319152A4E000D7EA0 /* JWViewController.h */,
-				D5CF3EA419152A4E000D7EA0 /* JWViewController.m */,
+				D5CF3EA319152A4E000D7EA0 /* JWMainViewController.h */,
+				D5CF3EA419152A4E000D7EA0 /* JWMainViewController.m */,
 				D5CF3E9219152A4E000D7EA0 /* Supporting Files */,
 				D526E9C31921966C000A134E /* JWApplication.h */,
 				D526E9C41921966C000A134E /* JWApplication.m */,
 				D54B0E401925474400B4656F /* Media.xcassets */,
+				0E2B0D22195226AE00CB792C /* JWStreamerViewProtocol.h */,
 			);
 			path = JesterWildApp;
 			sourceTree = "<group>";
@@ -224,8 +234,6 @@
 				D5CF3EC519152B10000D7EA0 /* JWMusicStreamer.m */,
 				D50476D5191556BD00E3E9E7 /* JWShows.h */,
 				D50476D6191556BD00E3E9E7 /* JWShows.m */,
-				D5F9392D1948FD4C00884AF1 /* JWXmlParserDelegate.m */,
-				D5F9392F1948FD6C00884AF1 /* JWXmlParserDelegate.h */,
 				D5B529B3194FAABC0018ADC1 /* JWShow.h */,
 				D5B529B4194FAABD0018ADC1 /* JWShow.m */,
 			);
@@ -288,6 +296,7 @@
 				ORGANIZATIONNAME = "Gerard Moreno-Torres Bertran";
 				TargetAttributes = {
 					D5CF3E8719152A4E000D7EA0 = {
+						DevelopmentTeam = 95A98B2E76;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -356,11 +365,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2B0D2E195247BE00CB792C /* JWShowCell.m in Sources */,
 				D5CF3E9819152A4E000D7EA0 /* main.m in Sources */,
-				D5F9392E1948FD4C00884AF1 /* JWXmlParserDelegate.m in Sources */,
+				0E2B0D211952265C00CB792C /* JWShowsTableViewController.m in Sources */,
 				D50476D7191556BD00E3E9E7 /* JWShows.m in Sources */,
 				D5CF3EC619152B10000D7EA0 /* JWMusicStreamer.m in Sources */,
-				D5CF3EA519152A4E000D7EA0 /* JWViewController.m in Sources */,
+				D5CF3EA519152A4E000D7EA0 /* JWMainViewController.m in Sources */,
 				D5B529B5194FAABD0018ADC1 /* JWShow.m in Sources */,
 				D5CF3E9C19152A4E000D7EA0 /* JWAppDelegate.m in Sources */,
 				D526E9C51921966C000A134E /* JWApplication.m in Sources */,
@@ -498,11 +508,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos7.1]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JesterWildApp/JesterWildApp-Prefix.pch";
 				INFOPLIST_FILE = "JesterWildApp/JesterWildApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -512,11 +525,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos7.1]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "JesterWildApp/JesterWildApp-Prefix.pch";
 				INFOPLIST_FILE = "JesterWildApp/JesterWildApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

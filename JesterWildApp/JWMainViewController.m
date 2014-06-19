@@ -3,7 +3,7 @@
 //  JesterWildApp
 //
 
-#import "JWViewController.h"
+#import "JWMainViewController.h"
 #import "JWShows.h"
 #import "JWMusicStreamer.h"
 #import <Foundation/Foundation.h>
@@ -11,8 +11,9 @@
 #import <MediaPlayer/MPNowPlayingInfoCenter.h>
 #import <MediaPlayer/MPMediaItem.h>
 #import "Notifications.h"
+#import "JWShowsTableViewController.h"
 
-@interface JWViewController ()
+@interface JWMainViewController ()
 {
     JWMusicStreamer* streamer;
     JWShows* shows;
@@ -21,7 +22,7 @@
 
 @end
 
-@implementation JWViewController
+@implementation JWMainViewController
 
 @synthesize progression = _progression;
 @synthesize timerLabel = _timerLabel;
@@ -96,7 +97,10 @@ extern NSString *remoteControlOtherButtonTapped;
     BOOL result = xmlParser.parse;
     
     if (!result){
-        exit(0);
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Connection error" message:@"Make sure you are connected to the internet and try restarting the app" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        
+        [alertView show];
+        return;
     }
 
     //Initialize streamer
@@ -110,7 +114,23 @@ extern NSString *remoteControlOtherButtonTapped;
     NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
     [notificationCenter addObserver:self selector:nil name:nil object:streamer.player];
     
+    //Set navigation bar
+    [self addShowsTableViewController];
+    
     [self reloadUI];
+}
+
+- (void) addShowsTableViewController
+{
+    UIBarButtonItem *showsButton = [[UIBarButtonItem alloc] initWithTitle:@"Shows" style:UIBarButtonItemStylePlain target:self action:@selector(pushShowsTableViewController)];
+    showsButton.tintColor = [UIColor blackColor];
+    self.navigationItem.rightBarButtonItem = showsButton;
+}
+
+- (void) pushShowsTableViewController
+{
+    JWShowsTableViewController *tableViewController = [[JWShowsTableViewController alloc] initWithStreamerViewProtocol:self];
+    [self.navigationController pushViewController: tableViewController animated:YES];
 }
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName
@@ -190,6 +210,7 @@ extern NSString *remoteControlOtherButtonTapped;
     [self animateHorizontalSlideWithView:_showTitle withHorizontalDistance:-1000];
     [self animateHorizontalSlideWithView:_showImage withHorizontalDistance:-1000];
     [self reloadUI];
+    [self play];
 }
 
 - (IBAction)githubLink
@@ -213,6 +234,7 @@ extern NSString *remoteControlOtherButtonTapped;
     [self animateHorizontalSlideWithView:_showTitle withHorizontalDistance:1000];
     [self animateHorizontalSlideWithView:_showImage withHorizontalDistance:1000];
     [self reloadUI];
+    [self play];
 }
 
 - (void) animateHorizontalSlideWithView:(UIView*) view withHorizontalDistance: (float) horizontalDistance
@@ -222,6 +244,30 @@ extern NSString *remoteControlOtherButtonTapped;
     [UIView animateWithDuration:0.35 animations:^(void){
         view.frame = origin;
     }];
+}
+
+//Streamer view protocol methods
+- (BOOL) streamShowAtIndex:(NSUInteger)index
+{
+    [self pause];
+    if ([streamer streamShowAtIndex:index])
+    {
+        [self reloadUI];
+        [self play];
+        return YES;
+    }
+
+    return NO;
+}
+
+- (JWShows*) shows
+{
+    return shows;
+}
+
+- (NSUInteger) count
+{
+    return shows.count;
 }
 
 @end

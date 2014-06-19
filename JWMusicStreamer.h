@@ -12,6 +12,7 @@
 @interface JWMusicStreamer : NSObject
 
 - (id) initWithShows:(JWShows*) shows andProgressBar:(UISlider*)progressBar andTimerLabel:(UILabel*) timerLabel;
+- (BOOL) streamShowAtIndex:(NSUInteger) newIndex;
 - (void) initPlayer;
 - (void) play;
 - (void) pause;

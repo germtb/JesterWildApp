@@ -160,4 +160,23 @@
     return  [NSString stringWithFormat:@"%@:%@", sMinutes, sSeconds];
 }
 
+- (BOOL) streamShowAtIndex:(NSUInteger)newIndex
+{
+    NSURL *URL = [_shows showForIndex:newIndex];
+    
+    if (URL == nil)
+        return NO;
+    
+    index = newIndex;
+    [_player removeTimeObserver:_progressBarBlock];
+    _player = [[AVPlayer alloc] initWithURL:URL];
+    [self setProgressBarBlock];
+    return YES;
+}
+
+- (NSUInteger) currentIndex
+{
+    return index;
+}
+
 @end
