@@ -30,6 +30,10 @@
     
     JWMainViewController *viewController = (JWMainViewController*) [mainStoryboard instantiateViewControllerWithIdentifier: @"MainViewController"];
     UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
+    navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.65 green:0.1 blue:0.1 alpha:1];
+//    navigationController.navigationBar.translucent = NO;
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    navigationController.navigationBar.barStyle = UIBarStyleBlack;
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
 

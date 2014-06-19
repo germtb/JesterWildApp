@@ -26,6 +26,7 @@
 - (void) viewDidLoad
 {
     [self.tableView registerClass: [JWShowCell class] forCellReuseIdentifier:@"ShowCell"];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

@@ -12,6 +12,8 @@
 #import <MediaPlayer/MPMediaItem.h>
 #import "Notifications.h"
 #import "JWShowsTableViewController.h"
+#import "Reachability.h"
+#import <SystemConfiguration/SystemConfiguration.h>
 
 @interface JWMainViewController ()
 {
@@ -84,6 +86,27 @@ extern NSString *remoteControlOtherButtonTapped;
     //Initialize shows
     shows = [[JWShows alloc] init];
 
+    //Check network availability
+    Reachability *reachability = [Reachability reachabilityForLocalWiFi];
+    NetworkStatus networkStatus = reachability.currentReachabilityStatus;
+    
+    if (networkStatus == NotReachable)
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You have to be connected to a WIFI network to use this app" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        return;
+    }
+    else if (networkStatus == ReachableViaWWAN)
+    {
+        UIAlertView* alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You have to be connected to a WIFI network to use this app" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        return;
+    }
+    else if (networkStatus == ReachableViaWiFi)
+    {
+        NSLog(@"All good!");
+    }
+    
     //Download file: https://dl.dropboxusercontent.com/u/140127353/shows.xml
     NSString *url = @"https://dl.dropboxusercontent.com/u/140127353/shows.xml";
     NSURLRequest *postRequest = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
@@ -123,7 +146,7 @@ extern NSString *remoteControlOtherButtonTapped;
 - (void) addShowsTableViewController
 {
     UIBarButtonItem *showsButton = [[UIBarButtonItem alloc] initWithTitle:@"Shows" style:UIBarButtonItemStylePlain target:self action:@selector(pushShowsTableViewController)];
-    showsButton.tintColor = [UIColor blackColor];
+    showsButton.tintColor = [UIColor whiteColor];
     self.navigationItem.rightBarButtonItem = showsButton;
 }
 
@@ -269,6 +292,12 @@ extern NSString *remoteControlOtherButtonTapped;
 {
     return shows.count;
 }
+
+- (UIStatusBarStyle) preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 
 @end
 

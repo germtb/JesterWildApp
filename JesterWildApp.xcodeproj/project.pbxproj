@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E19823619536D2B008BD0FA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E19823519536D2B008BD0FA /* SystemConfiguration.framework */; };
 		0E2B0D211952265C00CB792C /* JWShowsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B0D201952265C00CB792C /* JWShowsTableViewController.m */; };
 		0E2B0D2E195247BE00CB792C /* JWShowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E2B0D2D195247BE00CB792C /* JWShowCell.m */; };
+		0E5C29A71953569600A81846 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 0E5C29A61953569600A81846 /* Reachability.m */; };
 		D50476D7191556BD00E3E9E7 /* JWShows.m in Sources */ = {isa = PBXBuildFile; fileRef = D50476D6191556BD00E3E9E7 /* JWShows.m */; };
 		D526E9C51921966C000A134E /* JWApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = D526E9C41921966C000A134E /* JWApplication.m */; };
 		D539581F195105D2004E6CFC /* vinyl-ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = D539581E195105D2004E6CFC /* vinyl-ipad.png */; };
@@ -52,11 +54,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E2B0D1F1952265C00CB792C /* JWShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWShowsTableViewController.h; sourceTree = "<group>"; };
-		0E2B0D201952265C00CB792C /* JWShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWShowsTableViewController.m; sourceTree = "<group>"; };
-		0E2B0D22195226AE00CB792C /* JWStreamerViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWStreamerViewProtocol.h; sourceTree = "<group>"; };
-		0E2B0D2C195247BE00CB792C /* JWShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWShowCell.h; sourceTree = "<group>"; };
-		0E2B0D2D195247BE00CB792C /* JWShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWShowCell.m; sourceTree = "<group>"; };
+		0E19823519536D2B008BD0FA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0E2B0D1F1952265C00CB792C /* JWShowsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JWShowsTableViewController.h; path = JesterWildApp/JWShowsTableViewController.h; sourceTree = "<group>"; };
+		0E2B0D201952265C00CB792C /* JWShowsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JWShowsTableViewController.m; path = JesterWildApp/JWShowsTableViewController.m; sourceTree = "<group>"; };
+		0E2B0D22195226AE00CB792C /* JWStreamerViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JWStreamerViewProtocol.h; path = JesterWildApp/JWStreamerViewProtocol.h; sourceTree = "<group>"; };
+		0E2B0D2C195247BE00CB792C /* JWShowCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JWShowCell.h; path = JesterWildApp/JWShowCell.h; sourceTree = "<group>"; };
+		0E2B0D2D195247BE00CB792C /* JWShowCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JWShowCell.m; path = JesterWildApp/JWShowCell.m; sourceTree = "<group>"; };
+		0E5C29A51953569600A81846 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		0E5C29A61953569600A81846 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		D50476D5191556BD00E3E9E7 /* JWShows.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWShows.h; sourceTree = "<group>"; };
 		D50476D6191556BD00E3E9E7 /* JWShows.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JWShows.m; sourceTree = "<group>"; };
 		D526E9C31921966C000A134E /* JWApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JWApplication.h; sourceTree = "<group>"; };
@@ -88,8 +93,8 @@
 		D5CF3E9B19152A4E000D7EA0 /* JWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWAppDelegate.m; sourceTree = "<group>"; };
 		D5CF3E9E19152A4E000D7EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		D5CF3EA119152A4E000D7EA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		D5CF3EA319152A4E000D7EA0 /* JWMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JWMainViewController.h; sourceTree = "<group>"; };
-		D5CF3EA419152A4E000D7EA0 /* JWMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JWMainViewController.m; sourceTree = "<group>"; };
+		D5CF3EA319152A4E000D7EA0 /* JWMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = JWMainViewController.h; path = JesterWildApp/JWMainViewController.h; sourceTree = "<group>"; };
+		D5CF3EA419152A4E000D7EA0 /* JWMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JWMainViewController.m; path = JesterWildApp/JWMainViewController.m; sourceTree = "<group>"; };
 		D5CF3EAC19152A4E000D7EA0 /* JesterWildAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JesterWildAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5CF3EAD19152A4E000D7EA0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D5CF3EB519152A4E000D7EA0 /* JesterWildAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JesterWildAppTests-Info.plist"; sourceTree = "<group>"; };
@@ -104,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E19823619536D2B008BD0FA /* SystemConfiguration.framework in Frameworks */,
 				D5CF3E8E19152A4E000D7EA0 /* CoreGraphics.framework in Frameworks */,
 				D5CF3E9019152A4E000D7EA0 /* UIKit.framework in Frameworks */,
 				D5CF3E8C19152A4E000D7EA0 /* Foundation.framework in Frameworks */,
@@ -123,6 +129,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E5C299B1953408B00A81846 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5CF3E9D19152A4E000D7EA0 /* Main_iPhone.storyboard */,
+				D5CF3EA019152A4E000D7EA0 /* Main_iPad.storyboard */,
+				D5CF3EA319152A4E000D7EA0 /* JWMainViewController.h */,
+				D5CF3EA419152A4E000D7EA0 /* JWMainViewController.m */,
+				0E2B0D1F1952265C00CB792C /* JWShowsTableViewController.h */,
+				0E2B0D201952265C00CB792C /* JWShowsTableViewController.m */,
+				0E2B0D2C195247BE00CB792C /* JWShowCell.h */,
+				0E2B0D2D195247BE00CB792C /* JWShowCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0E5C299C1953410400A81846 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0E5C29A51953569600A81846 /* Reachability.h */,
+				0E5C29A61953569600A81846 /* Reachability.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		D553C6661915AD52006DD724 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,9 +175,11 @@
 		D5CF3E7F19152A4D000D7EA0 = {
 			isa = PBXGroup;
 			children = (
+				0E5C299C1953410400A81846 /* Utils */,
+				0E5C299B1953408B00A81846 /* Views */,
 				D553C6661915AD52006DD724 /* Images */,
 				D5F9392A1948BC2100884AF1 /* Config */,
-				D5CF3EC319152AAC000D7EA0 /* Classes */,
+				D5CF3EC319152AAC000D7EA0 /* MusicStreamer */,
 				D5CF3E9119152A4E000D7EA0 /* JesterWildApp */,
 				D5CF3EB319152A4E000D7EA0 /* JesterWildAppTests */,
 				D5CF3E8A19152A4E000D7EA0 /* Frameworks */,
@@ -167,6 +199,7 @@
 		D5CF3E8A19152A4E000D7EA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E19823519536D2B008BD0FA /* SystemConfiguration.framework */,
 				D5CF3E8B19152A4E000D7EA0 /* Foundation.framework */,
 				D5CF3E8D19152A4E000D7EA0 /* CoreGraphics.framework */,
 				D5CF3E8F19152A4E000D7EA0 /* UIKit.framework */,
@@ -178,21 +211,12 @@
 		D5CF3E9119152A4E000D7EA0 /* JesterWildApp */ = {
 			isa = PBXGroup;
 			children = (
-				0E2B0D1F1952265C00CB792C /* JWShowsTableViewController.h */,
-				0E2B0D201952265C00CB792C /* JWShowsTableViewController.m */,
-				0E2B0D2C195247BE00CB792C /* JWShowCell.h */,
-				0E2B0D2D195247BE00CB792C /* JWShowCell.m */,
 				D5CF3E9A19152A4E000D7EA0 /* JWAppDelegate.h */,
 				D5CF3E9B19152A4E000D7EA0 /* JWAppDelegate.m */,
-				D5CF3E9D19152A4E000D7EA0 /* Main_iPhone.storyboard */,
-				D5CF3EA019152A4E000D7EA0 /* Main_iPad.storyboard */,
-				D5CF3EA319152A4E000D7EA0 /* JWMainViewController.h */,
-				D5CF3EA419152A4E000D7EA0 /* JWMainViewController.m */,
 				D5CF3E9219152A4E000D7EA0 /* Supporting Files */,
 				D526E9C31921966C000A134E /* JWApplication.h */,
 				D526E9C41921966C000A134E /* JWApplication.m */,
 				D54B0E401925474400B4656F /* Media.xcassets */,
-				0E2B0D22195226AE00CB792C /* JWStreamerViewProtocol.h */,
 			);
 			path = JesterWildApp;
 			sourceTree = "<group>";
@@ -226,9 +250,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D5CF3EC319152AAC000D7EA0 /* Classes */ = {
+		D5CF3EC319152AAC000D7EA0 /* MusicStreamer */ = {
 			isa = PBXGroup;
 			children = (
+				0E2B0D22195226AE00CB792C /* JWStreamerViewProtocol.h */,
 				D526E9C619219759000A134E /* Notifications.h */,
 				D5CF3EC419152B10000D7EA0 /* JWMusicStreamer.h */,
 				D5CF3EC519152B10000D7EA0 /* JWMusicStreamer.m */,
@@ -237,7 +262,7 @@
 				D5B529B3194FAABC0018ADC1 /* JWShow.h */,
 				D5B529B4194FAABD0018ADC1 /* JWShow.m */,
 			);
-			name = Classes;
+			name = MusicStreamer;
 			sourceTree = "<group>";
 		};
 		D5F9392A1948BC2100884AF1 /* Config */ = {
@@ -368,6 +393,7 @@
 				0E2B0D2E195247BE00CB792C /* JWShowCell.m in Sources */,
 				D5CF3E9819152A4E000D7EA0 /* main.m in Sources */,
 				0E2B0D211952265C00CB792C /* JWShowsTableViewController.m in Sources */,
+				0E5C29A71953569600A81846 /* Reachability.m in Sources */,
 				D50476D7191556BD00E3E9E7 /* JWShows.m in Sources */,
 				D5CF3EC619152B10000D7EA0 /* JWMusicStreamer.m in Sources */,
 				D5CF3EA519152A4E000D7EA0 /* JWMainViewController.m in Sources */,
@@ -410,6 +436,7 @@
 				D5CF3E9E19152A4E000D7EA0 /* Base */,
 			);
 			name = Main_iPhone.storyboard;
+			path = JesterWildApp;
 			sourceTree = "<group>";
 		};
 		D5CF3EA019152A4E000D7EA0 /* Main_iPad.storyboard */ = {
@@ -418,6 +445,7 @@
 				D5CF3EA119152A4E000D7EA0 /* Base */,
 			);
 			name = Main_iPad.storyboard;
+			path = JesterWildApp;
 			sourceTree = "<group>";
 		};
 		D5CF3EB619152A4E000D7EA0 /* InfoPlist.strings */ = {
