@@ -18,6 +18,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        CGFloat width = [UIScreen mainScreen].bounds.size.width;
+        self.frame = CGRectMake(0,0, width, 44);
         label = [[UILabel alloc] initWithFrame:[self frame]];
         label.textAlignment = NSTextAlignmentCenter;
         label.numberOfLines = -1;
